@@ -13,6 +13,7 @@
   var px15 = 1310, py15 = 170, px16 = 1280, py16 = 140
   var px17 = 1270, py17 = 150, px18 = 1240, py18 = 120
   var px19 = 1230, py19 = 130, px20 = 1200, py20 = 100
+  
   var pistonstate1 = true, pistonstate2 = false, pistonstate3 = true, pistonstate4 = false, pistonstate5 = true, pistonstate6 = false, pistonstate7 = true, pistonstate8 = false, pistonstate9 = true, pistonstate10 = false
   var pistonstate11 = true, pistonstate12 = false, pistonstate13 = true, pistonstate14 = false, pistonstate15 = true, pistonstate16 = false, pistonstate17 = true, pistonstate18 = false, pistonstate19 = true, pistonstate20 = false
   var screenstate = true
@@ -97,70 +98,18 @@ function draw() {
   vertex(40, 760)
   endShape(CLOSE)
 
-//Left Pistons
-  fill(30, 30, 60)
-  beginShape()
-  vertex(80, 80)
-  vertex(140, 80)
-  vertex(560, 500)
-  vertex(500, 500)
-  endShape(CLOSE)
-    beginShape()
-    vertex(140, 80)
-    vertex(200, 80)
-    vertex(620, 500)
-    vertex(560, 500)
-    endShape(CLOSE)
-      beginShape()
-      vertex(200, 80)
-      vertex(260, 80)
-      vertex(680, 500)
-      vertex(620, 500)
-      endShape(CLOSE)
-        beginShape()
-        vertex(260, 80)
-        vertex(320, 80)
-        vertex(740, 500)
-        vertex(680, 500)
-        endShape(CLOSE)
-          beginShape()
-          vertex(320, 80)
-          vertex(380, 80)
-          vertex(800, 500)
-          vertex(740, 500)
-          endShape(CLOSE)
-
-//Right Pistons
-  beginShape()
-  vertex(1280, 80)
-  vertex(1220, 80)
-  vertex(800, 500)
-  vertex(860, 500)
-  endShape(CLOSE)
-    beginShape()
-    vertex(1340, 80)
-    vertex(1280, 80)
-    vertex(860, 500)
-    vertex(920, 500)
-    endShape(CLOSE)
-      beginShape()
-      vertex(1400, 80)
-      vertex(1340, 80)
-      vertex(920, 500)
-      vertex(980, 500)
-      endShape(CLOSE)
-        beginShape()
-        vertex(1460, 80)
-        vertex(1400, 80)
-        vertex(980, 500)
-        vertex(1040, 500)
-        endShape(CLOSE)
-          beginShape()
-          vertex(1520, 80)
-          vertex(1460, 80)
-          vertex(1040, 500)
-          vertex(1100, 500)
-          endShape(CLOSE)
+//Pistons
+  leftpiston(0, 0)
+  leftpiston(60, 0)
+  leftpiston(120, 0)
+  leftpiston(180, 0)
+  leftpiston(240, 0)
+  
+  rightpiston (0, 0)
+  rightpiston (60, 0)
+  rightpiston (120, 0)
+  rightpiston (180, 0)
+  rightpiston (240, 0)
 
 //Piston 1 Motion
   push()
@@ -949,5 +898,33 @@ function pumps(x, y){
   ellipse(0, 0, 50, 50)
   fill(40, 40, 60)
   ellipse(0, 0, 40, 40)
+  pop()
+}
+
+function leftpiston (x, y){
+  push()
+  translate(x, y)
+  fill(30, 30, 60)
+  strokeWeight(1)
+  beginShape()
+  vertex(80, 80)
+  vertex(140, 80)
+  vertex(560, 500)
+  vertex(500, 500)
+  endShape(CLOSE)
+  pop()
+}
+
+function rightpiston (x, y){
+  push()
+  translate(x, y)
+  fill(30, 30, 60)
+  strokeWeight(1)
+  beginShape()
+  vertex(1280, 80)
+  vertex(1220, 80)
+  vertex(800, 500)
+  vertex(860, 500)
+  endShape(CLOSE)
   pop()
 }
